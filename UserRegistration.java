@@ -4,25 +4,25 @@ import java.util.regex.Pattern;
 
 public class UserRegistration {
 
-    public void userMobileFormat(String phoneNumber) {
+    public void userPassword(String password) {
 
-        Pattern pattern = Pattern.compile("^[0-9]{0,2} [0-9]{10}");
-        Matcher matcher = pattern.matcher(phoneNumber);
+        Pattern pattern = Pattern.compile("[a-zA-Z]{8,}");
+        Matcher matcher = pattern.matcher(password);
 
         if (matcher.find()) {
-            System.out.println("Valid -> " + phoneNumber);
+            System.out.println("Valid -> " + password);
         } else {
-            System.out.println("Invalid -> " + phoneNumber);
+            System.out.println("Invalid -> " + password);
         }
     }
 
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter Valid Phone Number : ");
-        String isValidPhoneNumber = sc.nextLine();
+        System.out.println("Enter Valid Password : ");
+        String isValidPassword = sc.nextLine();
 
         UserRegistration userRegistration = new UserRegistration();
-        userRegistration.userMobileFormat(isValidPhoneNumber);
+        userRegistration.userPassword(isValidPassword);
     }
 }
