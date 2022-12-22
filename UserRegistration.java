@@ -4,25 +4,25 @@ import java.util.regex.Pattern;
 
 public class UserRegistration {
 
-    public void userFirstName(String firstName) {
+    public void userLastName(String lastName) {
 
         Pattern pattern = Pattern.compile("^[A-Z][a-z]{2,}$");
-        Matcher matcher = pattern.matcher(firstName);
+        Matcher matcher = pattern.matcher(lastName);
 
         if (matcher.find()) {
-            System.out.println("Valid -> " + firstName);
+            System.out.println("Valid -> " + lastName);
         } else {
-            System.out.println("Invalid -> " + firstName);
+            System.out.println("Invalid -> " + lastName);
         }
     }
 
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter Valid First Name : ");
-        String isValidFirstName = sc.nextLine();
+        System.out.println("Enter Valid Last Name : ");
+        String isValidLastName = sc.nextLine();
 
         UserRegistration userRegistration = new UserRegistration();
-        userRegistration.userFirstName(isValidFirstName);
+        userRegistration.userLastName(isValidLastName);
     }
 }
