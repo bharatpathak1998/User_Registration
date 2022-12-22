@@ -4,25 +4,25 @@ import java.util.regex.Pattern;
 
 public class UserRegistration {
 
-    public void userEmailId(String emailId) {
+    public void userMobileFormat(String phoneNumber) {
 
-        Pattern pattern = Pattern.compile("^[a-zA-Z0-9.+_-]+[@][a-zA-Z0-9]+[.]co(m|.in)$");
-        Matcher matcher = pattern.matcher(emailId);
+        Pattern pattern = Pattern.compile("^[0-9]{0,2} [0-9]{10}");
+        Matcher matcher = pattern.matcher(phoneNumber);
 
         if (matcher.find()) {
-            System.out.println("Valid -> " + emailId);
+            System.out.println("Valid -> " + phoneNumber);
         } else {
-            System.out.println("Invalid -> " + emailId);
+            System.out.println("Invalid -> " + phoneNumber);
         }
     }
 
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter Valid Email Id : ");
-        String isValidEmailId = sc.nextLine();
+        System.out.println("Enter Valid Phone Number : ");
+        String isValidPhoneNumber = sc.nextLine();
 
         UserRegistration userRegistration = new UserRegistration();
-        userRegistration.userEmailId(isValidEmailId);
+        userRegistration.userMobileFormat(isValidPhoneNumber);
     }
 }
